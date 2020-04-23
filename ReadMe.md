@@ -34,7 +34,8 @@ Setup Font
 ### Article Replace Tags
 
 - **__novo_code__family_uri__** - family category of the article uri
--- examples: /create-cover-letter, /write-resume-cv, /find-a-job (basically the different article categori list unique part of the uri)
+ - examples: /create-cover-letter, /write-resume-cv, /find-a-job
+ - basically the different article categori list unique part of the uri
 
 ### Article Ajax Calls
 
