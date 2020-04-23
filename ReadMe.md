@@ -34,13 +34,16 @@ check altenrative lang
 
 ### Article Replace Tags
 
-1. **__novo_code__family_uri__** - family category of the article uri
+- **__novo_code__family_uri__** - family category of the article uri
    - examples: /create-cover-letter, /write-resume-cv, /find-a-job
    - basically the different article categori list unique part of the uri
-2. **__novo_article_category_group__** - family category
+- **__novo_article_category_group__** - family category
    - examples: Cover Letter Writing Tips,Personal Development
-2. **__novo_article_canonical__** - Canonical Link to the article
+- **__novo_article_canonical__** - Canonical Link to the article
    - exampels: https://novoresume.com/career-blog/how-to-write-a-resume-guide
+- **__novo_article_meta_description__** - seo article description
+   - 
+
 ### Article Ajax Calls
 
 
