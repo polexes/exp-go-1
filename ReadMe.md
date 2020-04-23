@@ -66,12 +66,11 @@ Setup reviews article
    - family category of the article uri
    - examples: /create-cover-letter, /write-resume-cv, /find-a-job
    - basically the different article categori list unique part of the uri
-   - 
 
 - **__novo_article_category_group__** 
    - family category
    - examples: Cover Letter Writing Tips,Personal Development
-   -    
+ 
 
 - **__novo_article_canonical__** 
    - Canonical Link to the article
@@ -82,13 +81,12 @@ Setup reviews article
 
 - **__novo_article_meta_url__** 
    - the full url of the article(including https and novoresume.com)
-   - examples: https://novoresume.com/career-blog/how-to-write-a-resume-guide
-   - 
+   - example: https://novoresume.com/career-blog/how-to-write-a-resume-guide
 
 - **__novo_article_img__**
-   - the full url of the article(including https and novoresume.com)
-   - examples: https://novoresume.com/career-blog/how-to-write-a-resume-guide
-   - 
+   - full url pointing to article background image
+   - example: https://d.novoresume.com/images/blogs/how-to-write-resume/bg-cover-article.png
+   - example:https://d.novoresume.com/images/blogs/**article_id**/bg-cover-article.**bg_file_extension**
 
 - **__novo_article_img_extension__** 
    - 
