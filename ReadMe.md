@@ -2,6 +2,7 @@ Test prepare minify trnaslations production(after all is finished)
 prod test all data in inserted
 Produce Libraries Needed
 Produce UtilJs and common
+Test content blocks is always compressed!!!
 Produce header common html
 Produce Article Page
 Produce Cateogry List page
@@ -16,10 +17,12 @@ Test language setup for us and da
 test compress html
 Make sure seo limti charaters are respected(ez title in backend is 80 chracters)
 test footer
+make sure background src image is supported
 dobule check again everything gets replaced
 remidner setup json
 Setup Font
 check altenrative lang
+test again there are no missing tags
 amp always generate(maybe cache 10 min)
 -- compress amp future task in the future(and also to check nav menu all devices) --
 ### TO do Handle:
@@ -121,25 +124,61 @@ Setup reviews article
    - Html + title of article(visible to user)
    - it contains h1
    - example code: 
-   - ```<h1>${header1}</h1><div class="quick-info">${article.htmlQuickInfo}</div>```
+finish itfix ittt!!!!
+```
+<h1>${header1}</h1>
+<div class="quick-info">
+    <span>${strDate}</span> 
+    <div class="icon-time"></div>
+        <span>${article.no_time} {{pageMinRead}}</span> 
+    </div>
+``` 
+fix ittt!!!!
 
 - **__novo_article_json_ld__**
-   - 
+   - json-ld data for the article
+   - we want images here, reviews for seo, list of images seo important images etc
+
 
 - **__novo_author__image__**
-   - 
-
-
+   - html with the author img 
+   to fix
+```
+<div class="pre-wait-img" data-src="<cdn-location/>/images/blogs/${author.author_id}.jpeg" data-alt="{{pageAltArticleAuthor}} ${author.full_name}"></div> 
+```
+- **__novo_author_desc__**
+   - html author description
+   - example:
+```
+<div id="author-top">
+<i id="author-label">{{pageLblAuthor}}</i>
+<span id = "author-name">
+    <b>${author.full_name}</b>
+</span>
+    <span id="text-author-dec">– </span><span id="author-title">${author.title}</span>
+</div>
+```
 - **__novo_article_optional_bg_css__**
-   - 
-
+   - optionale article source imagem if not place emptry string
+   - example:
+```
+<section class="holder-bg-sr"><div class="article-sc"><i>Source:${bg_src}</i></div></section>
+```
 - **__novo_article_content_blocks__**
-   - 
+   - content of the article
+   - the content/html should be compressed
 
 - **<style\>**
-   - 
-
-
+   - inserts extra css, for example mobile, medium screen background source
+   - notice we do not close the tag, as the closing tag is already in the code
+   - make sure no extra whitespaces will be included **we want the final file to stay compressed**
+   - example:
+```
+<style >
+#holder-article-bg #article-bg{background:url("<cdn-location/>/images/blogs/${article_id}/bg-cover-article.${bg_extension}") ${bg_css};}
+@media screen and (max-width:1650px){#holder-article-bg #article-bg{ background:url("<cdn-location/>/images/blogs/${article_id}/bg-cover-article-mid.${bg_extension}") ${bg_css};}}
+@media screen and (max-width:650px){ #holder-article-bg #article-bg{background:url("<cdn-location/>/images/blogs/${article_id}/bg-cover-article-mobile.${bg_extension}") ${bg_css};}}
+```
 
 
 
@@ -147,7 +186,8 @@ Setup reviews article
 to do setup
 
 ### Article ANP Replace Tags
-
+add special cases:amp__novo_article_top__, author tags, style tag,__novo_article_optional_bg_cs etc
+!!!! fix amp transatiosn for author data
 - **same tags as in ### Article Replace Tags** + the follwoing:
 - **__novo_article_top_amp__**
 - **__novo_amp_reviews__**
