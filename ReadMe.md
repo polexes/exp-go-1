@@ -121,7 +121,7 @@ Setup reviews article
    - Html + title of article(visible to user)
    - it contains h1
    - example code: 
-   - ```<h1>${header1}</h1><div class="quick-info">${article.htmlQuickInfo}</div>``
+   - ```<h1>${header1}</h1><div class="quick-info">${article.htmlQuickInfo}</div>```
 
 - **__novo_article_json_ld__**
    - 
