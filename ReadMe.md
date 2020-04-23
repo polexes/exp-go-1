@@ -65,27 +65,60 @@ Setup reviews article
 - **__novo_code__family_uri__** - family category of the article uri
    - examples: /create-cover-letter, /write-resume-cv, /find-a-job
    - basically the different article categori list unique part of the uri
+   - 
+
 - **__novo_article_category_group__** - family category
    - examples: Cover Letter Writing Tips,Personal Development
+   -    
+
 - **__novo_article_canonical__** - Canonical Link to the article
    - exampels: https://novoresume.com/career-blog/how-to-write-a-resume-guide
-- **__novo_article_meta_description__** - seo article description
+   - **__novo_article_meta_description__** - seo article description
 - **__novo_article_meta_title__** - meta title
-- **__novo_article_meta_url__** 
-- **__novo_article_img__**
-- **__novo_article_img_extension__** 
-- **__novo_article_img_width__**
-- **__novo_article_img_height__**
-- **__novo_article_keywords__**
-- **__novo_article_top__**
-- **__novo_article_meta_title__**
-- **__novo_article_json_ld__**
-- **__novo_author__image__**
-- **__novo_author_desc__**
-- **__novo_article_optional_bg_css__**
-- **__novo_article_content_blocks__**
-<style\>
+   - 
 
+- **__novo_article_meta_url__** the full url of the article(including https and novoresume.com)
+   - examples: https://novoresume.com/career-blog/how-to-write-a-resume-guide
+   - 
+
+- **__novo_article_img__**
+   - 
+
+- **__novo_article_img_extension__** 
+   - 
+
+- **__novo_article_img_width__**
+   - 
+
+- **__novo_article_img_height__**
+   - 
+
+- **__novo_article_keywords__**
+   - 
+
+- **__novo_article_top__**
+   - 
+
+- **__novo_article_meta_title__**
+   - 
+
+- **__novo_article_json_ld__**
+   - 
+
+- **__novo_author__image__**
+   - 
+
+- **__novo_author_desc__**
+   - 
+
+- **__novo_article_optional_bg_css__**
+   - 
+
+- **__novo_article_content_blocks__**
+   - 
+
+- **<style\>**
+   - 
 
 
 
