@@ -76,8 +76,8 @@ Setup reviews article
    - Canonical Link to the article
    - exampels: https://novoresume.com/career-blog/how-to-write-a-resume-guide
    - **__novo_article_meta_description__** - seo article description
-- **__novo_article_meta_title__** - meta title
-   - 
+- **__novo_article_meta_title__** 
+   - meta title
 
 - **__novo_article_meta_url__** 
    - the full url of the article(including https and novoresume.com)
@@ -89,21 +89,31 @@ Setup reviews article
    - example:https://d.novoresume.com/images/blogs/**article_id**/bg-cover-article.**bg_file_extension**
 
 - **__novo_article_img_extension__** 
-   - 
+   - article image extension (useful for seo/share metadata)
+   - example: png,jpeg,jg
 
 - **__novo_article_img_width__**
-   - 
-
+   - the size of the artigle bg width in numeric value
+   - 2483
+   
 - **__novo_article_img_height__**
-   - 
+   - the size of the artigle bg width in numeric value
+   - 1299
 
 - **__novo_article_keywords__**
-   - 
-
-- **__novo_article_top__**
-   - 
+   - Seo keywords, social sahre metadata
+   - remove quotes from keywords, and make sure there are utf8 frielndly
+   - examples: resume templates, how to write a resume
 
 - **__novo_article_meta_title__**
+   - Seo tile,page title, social sahre metadata
+   - remove quotes from keywords, and make sure there are utf8 frielndly
+ 
+- **__novo_author_desc__**
+   - Seo description, seo title, social sahre metadata
+   - remove quotes from keywords, and make sure there are utf8 frielndly
+
+- **__novo_article_top__**
    - 
 
 - **__novo_article_json_ld__**
@@ -112,8 +122,6 @@ Setup reviews article
 - **__novo_author__image__**
    - 
 
-- **__novo_author_desc__**
-   - 
 
 - **__novo_article_optional_bg_css__**
    - 
