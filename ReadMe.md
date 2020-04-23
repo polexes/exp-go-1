@@ -86,6 +86,8 @@ Setup reviews article
    - 
 
 - **__novo_article_img__**
+   - the full url of the article(including https and novoresume.com)
+   - examples: https://novoresume.com/career-blog/how-to-write-a-resume-guide
    - 
 
 - **__novo_article_img_extension__** 
