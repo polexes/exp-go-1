@@ -14,7 +14,7 @@ Produce Article Reviews
 mention careful utf8 & cahracters etc
 Test language setup for us and da
 test compress html
-
+Make sure seo limti charaters are respected(ez title in backend is 80 chracters)
 test footer
 dobule check again everything gets replaced
 remidner setup json
@@ -102,19 +102,26 @@ Setup reviews article
 
 - **__novo_article_keywords__**
    - Seo keywords, social sahre metadata
+   - Max 1,2 keywords
+   - Max 80 characters 
    - remove quotes from keywords, and make sure there are utf8 frielndly
    - examples: resume templates, how to write a resume
 
 - **__novo_article_meta_title__**
    - Seo tile,page title, social sahre metadata
+   - **adviced** 60, max 80 characters
    - remove quotes from keywords, and make sure there are utf8 frielndly
  
 - **__novo_author_desc__**
    - Seo description, seo title, social sahre metadata
+   - max 160 characters
    - remove quotes from keywords, and make sure there are utf8 frielndly
 
 - **__novo_article_top__**
-   - 
+   - Html + title of article(visible to user)
+   - it contains h1
+   - example code: 
+   - ```<h1>${header1}</h1><div class="quick-info">${article.htmlQuickInfo}</div>``
 
 - **__novo_article_json_ld__**
    - 
