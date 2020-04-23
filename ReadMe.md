@@ -21,6 +21,7 @@ make sure background src image is supported
 dobule check again everything gets replaced
 remidner setup json
 Setup Font
+
 check altenrative lang
 test again there are no missing tags
 amp always generate(maybe cache 10 min)
@@ -120,44 +121,36 @@ Setup reviews article
    - max 160 characters
    - remove quotes from keywords, and make sure there are utf8 frielndly
 
-- **__novo_article_top__**
+- **__novo_article__header1__<**
    - Html + title of article(visible to user)
    - it contains h1
    - example code: 
-finish itfix ittt!!!!
-```
-<h1>${header1}</h1>
-<div class="quick-info">
-    <span>${strDate}</span> 
-    <div class="icon-time"></div>
-        <span>${article.no_time} {{pageMinRead}}</span> 
-    </div>
-``` 
-fix ittt!!!!
+
+- **__novo_article__date__<**
+   - date when the article was created(or updated based on the settings)
+   - year month(in words) day (use 0 if the date is for example 01)
+   - Examples:
+   - 2019 January 8
+   - January 8(if current year) 
+   - Today (if date is today) 
+
+- **__novo_article__min__**
+    - number of minutes to read the article
 
 - **__novo_article_json_ld__**
    - json-ld data for the article
    - we want images here, reviews for seo, list of images seo important images etc
 
 
-- **__novo_author__image__**
-   - html with the author img 
-   to fix
-```
-<div class="pre-wait-img" data-src="<cdn-location/>/images/blogs/${author.author_id}.jpeg" data-alt="{{pageAltArticleAuthor}} ${author.full_name}"></div> 
-```
-- **__novo_author_desc__**
-   - html author description
-   - example:
-```
-<div id="author-top">
-<i id="author-label">{{pageLblAuthor}}</i>
-<span id = "author-name">
-    <b>${author.full_name}</b>
-</span>
-    <span id="text-author-dec">– </span><span id="author-title">${author.title}</span>
-</div>
-```
+- **__novo_author_id__img__**
+   - author id image
+
+- **__novo_author_full_name__**
+   - author full name
+
+- **__novo_author_title__**
+   - author title
+
 - **__novo_article_optional_bg_css__**
    - optionale article source imagem if not place emptry string
    - example:
@@ -165,7 +158,7 @@ fix ittt!!!!
 <section class="holder-bg-sr"><div class="article-sc"><i>Source:${bg_src}</i></div></section>
 ```
 - **__novo_article_content_blocks__**
-   - content of the article
+   - the main content of the article, text, lists, images etc
    - the content/html should be compressed
 
 - **<style\>**
@@ -186,6 +179,7 @@ fix ittt!!!!
 to do setup
 
 ### Article ANP Replace Tags
+use code from old project
 add special cases:amp__novo_article_top__, author tags, style tag,__novo_article_optional_bg_cs etc
 !!!! fix amp transatiosn for author data
 - **same tags as in ### Article Replace Tags** + the follwoing:
