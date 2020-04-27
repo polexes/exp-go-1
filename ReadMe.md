@@ -1,5 +1,8 @@
 # Description
-Explains how to deploy the category lists, articles, amp
+Generates Blog Visitor pages as:
+- Career Blog Category Pages
+- Matrix for Blog Article
+- Matrix for Blog Article AMP
 
 ## To do when deploy is done:
 - subscribe
@@ -7,6 +10,7 @@ Explains how to deploy the category lists, articles, amp
 - subscribe email marketing
 - amp deployed and compressed
 - amp minify images
+- add table of contents for this
 - test auth mode
 - test amp alternative lang is not added
 - amp json ld
@@ -46,10 +50,7 @@ Explains how to deploy the category lists, articles, amp
 
 
 
-## to do explain how to serve pages
-
 ## How to start
-
 To compile files:
 
 - npm node_modules
@@ -64,23 +65,67 @@ To play with test-index.js you need to:
 - add **private.key** and **public.crt**
 
 ## Notes:
+
 - private>novo_lib
-Has generic components of frontend for novoresume.com
+   - Has generic components of frontend for novoresume.com
+   
 - public>images
-Contains generic images needed for the blog pages
+   - Contains generic images needed for the blog pages
+
 - public>client
-Contains the scripts(in lib and novo)
+   - Contains the scripts(in lib and novo)
+
 - public>nwf
-Contains fonts
+   - Contains fonts
 
 
 ## Dependencies:
 - Novobook Repo in root folders (novoresume)
 
 
+
+## Serving the pages
+
+An example is given more or less in test-index.js how to serve the files,
+important some data is dynamic while the other is not, what is marked as **dynamic data, can not be cached**,
+after getting the page from cache this *dynamic data always must be compiled when the pages is served*
+### Auth and Language
+
+
+### Dynamic Data (can not cache html page after those pages)
+**use checkAuth from novobook**
+```
+
+/// 
+let crsfRepalceStr = '',
+    userSessionDataID = '';
+
+if (req.authSession && req.authSession.tokenCrsf) {
+    crsfRepalceStr = req.authSession.tokenCrsf
+    userSessionDataID = req.authSession.dataID;
+}
+
+
+page = page.replace('__novo__crsf__novo__', crsfRepalceStr).replace('__novo__data_id__novo__', userSessionDataID);
+
+```
+### Non Dynamic Data(okay to cache html page after those changes)
+
+```
+let canonicalLink = 'https://novoresume.com' + req.originalUrl.replace(/((\/|\/\?(.*)||\?(.*)|(\/?)\#(.*)))$/, '').replace(/\/amp/, '').replace(/\/amp\//, '');
+
+page = page.replace(/\<cdn\-location\/\>/g, CDN_URL)
+    .replace(/__pageSEOCanonical__/g, `href="${canonicalLink}"`)
+    .replace(/__pageSEOCanonicalOG__/g, canonicalLink);
+
+
+if (IS_PRODUCTION) {
+    page = page.replace(/href="\//g, 'href="https://novoresume.com/').replace(/href='\//g, "href='https://novoresume.com/");
+}
+```
 ## Important
 When replacing meta tags, do it globally, as one tag my appear multiple times in the article, the only exception is when we inject json-ld or CSS
-- Example of tags that appear multiple times; **__novo_article_meta_description__**,**__novo_article_meta_title__** (they are used for seo title, twitter metadata, facebook metadata)
+- Example of tags that appear multiple times; **__novo_article_meta_description__**,**__novo_article_meta_title__** (they are used for seo title, twitter metadata,facebook metadata)
 - Example replace only once: **__novo_article_json_ld__**
 
 ## Auth vs Non Auth
