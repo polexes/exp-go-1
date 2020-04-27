@@ -1,43 +1,45 @@
-Test prepare minify trnaslations production(after all is finished)
-prod test all data in inserted
-Produce Libraries Needed
-Produce UtilJs and common
-Test content blocks is always compressed!!!
-Produce header common html
-Produce Article Page
-Produce Cateogry List page
-When deploy, test all meta data, og urls etc
-Lowercase/not rules communicate them
-Produce Suggestions
-Generate AMp take some of the needed code form the old one
-Produce Subscirbe Email Marketing
-Produce Article Reviews
-mention careful utf8 & cahracters etc
-Test language setup for us and da
-test compress html
-Make sure seo limti charaters are respected(ez title in backend is 80 chracters)
-test footer
-make sure background src image is supported
-dobule check again everything gets replaced
-remidner setup json
-Setup Font
+# Description
+Explains how to deploy the category lists, articles, amp
 
-check altenrative lang
-test again there are no missing tags
-amp always generate(maybe cache 10 min)
--- compress amp future task in the future(and also to check nav menu all devices) --
-### TO do Handle:
-- auth vs non auth
+## To do when deploy is done:
+- subscribe
+- subscribe email marketing
+- amp deployed and compressed
+- amp minify images
+- test amp alternative lang is not added
+- amp json ld
+- review article
+- share count
+- test amp footer
+- generate sitemap
+- test other langs
+- add public files to d.novoresume.com and do old images seo redirects
+- test crsf token
+- improve page handler to more generic
+
+## To do test when deploy:
+- allow Access-Control-Allow-Origin https://d.novoresume.com/https://novoresume.com
+- auth vs non-auth page
+- implement json-ld
+- test field limits
+- test everything is replace in terms of tags
 - year
-- language compression
-- production
-- check entire source code
-- dev mode keep only en language
-- if font is setup
-- setup task for blog subscribe
+- test footer
+- all lists, and load async all articles if more than 12
+- test font loaded
+- test all code is minified(includign content blocks)
+- test all metadata + json is setup
+- test language metadata
+- test articles look the same
+- test seo important images vs non
+- test amp compress
+
+
 
 ## Dependencies:
-Novobook
+- Novobook Repo in root folders (novoresume)
+
+
 ## Important
 When replacing meta tags, do it globally, as one tag my appear multiple times in the article, the only exception is when we inject json-ld or CSS
 - Example of tags that appear multiple times; **__novo_article_meta_description__**,**__novo_article_meta_title__** (they are used for seo title, twitter metadata, facebook metadata)
@@ -45,17 +47,30 @@ When replacing meta tags, do it globally, as one tag my appear multiple times in
 
 ## Auth vs Non Auth
 
+IF users are auth we should serve the auth page, if not we should serve the non-auth,
+For AMP we use the non-auth page only
+
+
 ## Article List Generate
-to setup(check what can overlap
+
 __novo_blog_list_title__
 __novo_blog_list_desc__
 __novo_blog_list_keyword__
-__novo_article_h1__
-__novoArticleCanonical__
-__novo_code__family_uri__
-<articles\-category(\s)?\/\>
-<blog\-main\-featured\-articles(\s)?\/\>
-<blog\-list\-articles\-suggestions(\s)?\/\>
+
+!!!!!!!!!!!! setup article header,keywords,desc,title!!!!!!!!!!!!!!!!!!!!!
+
+- **__novo_article_category_text__** 
+   - category text
+   - examples: Resume & CV Writing Tips, Cover Letter Writing Tips
+
+- **__novo_code__family_uri__** 
+   - family category of the article uri
+   - examples: /create-cover-letter, /write-resume-cv, /find-a-job
+   - basically the different article categori list unique part of the uri
+
+- **__novo_article_canonical__** 
+   - Canonical Link to the article
+   - exampels: https://novoresume.com/career-blog/how-to-write-a-resume-guide
 
 
 ## Article Page Generate
@@ -63,6 +78,9 @@ __novo_code__family_uri__
 ### Article Ajax Calls
 
 Setup reviews article
+
+- GET /authors
+<pre> Get all authors </pre>
 
 ### Article Replace Tags
 
@@ -79,7 +97,10 @@ Setup reviews article
 - **__novo_article_canonical__** 
    - Canonical Link to the article
    - exampels: https://novoresume.com/career-blog/how-to-write-a-resume-guide
-   - **__novo_article_meta_description__** - seo article description
+
+- **__novo_article_meta_description__** 
+   - seo article description
+
 - **__novo_article_meta_title__** 
    - meta title
 
@@ -116,17 +137,17 @@ Setup reviews article
    - **adviced** 60, max 80 characters
    - remove quotes from keywords, and make sure there are utf8 frielndly
  
-- **__novo_author_desc__**
+- **__novo_article_meta_description__**
    - Seo description, seo title, social sahre metadata
    - max 160 characters
    - remove quotes from keywords, and make sure there are utf8 frielndly
 
-- **__novo_article__header1__<**
+- **__novo_article__header1__**
    - Html + title of article(visible to user)
    - it contains h1
    - example code: 
 
-- **__novo_article__date__<**
+- **__novo_article__date__**
    - date when the article was created(or updated based on the settings)
    - year month(in words) day (use 0 if the date is for example 01)
    - Examples:
