@@ -3,15 +3,20 @@ Explains how to deploy the category lists, articles, amp
 
 ## To do when deploy is done:
 - subscribe
+- rename projects, ez frontend to admin_gui, and then blog_view to visitor_gui
 - subscribe email marketing
 - amp deployed and compressed
 - amp minify images
+- test auth mode
 - test amp alternative lang is not added
 - amp json ld
 - review article
+- test facebook counts still okay
 - share count
+- test article suggestion hover
 - test amp footer
 - generate sitemap
+- move gitignore in root
 - test other langs
 - add public files to d.novoresume.com and do old images seo redirects
 - test crsf token
@@ -22,6 +27,11 @@ Explains how to deploy the category lists, articles, amp
 - auth vs non-auth page
 - implement json-ld
 - test field limits
+- test fb, linkedin, twitter metadata
+- remove seo page lists
+- test all shares links
+- test non seo images
+- test category is selected in uri + documentation other langs
 - test everything is replace in terms of tags
 - year
 - test footer
@@ -34,6 +44,34 @@ Explains how to deploy the category lists, articles, amp
 - test seo important images vs non
 - test amp compress
 
+
+
+## to do explain how to serve pages
+
+## How to start
+
+To compile files:
+
+- npm node_modules
+- grunt lib
+- grunt (for prod)
+- grunt defaultDev (dev mode, only **us** language supported, no compression)
+- grunt watch (watch prod)
+- grunt watch:dev (watch dev)
+
+To play with test-index.js you need to:
+- create a folder **certificates**
+- add **private.key** and **public.crt**
+
+## Notes:
+- private>novo_lib
+Has generic components of frontend for novoresume.com
+- public>images
+Contains generic images needed for the blog pages
+- public>client
+Contains the scripts(in lib and novo)
+- public>nwf
+Contains fonts
 
 
 ## Dependencies:
@@ -52,10 +90,9 @@ For AMP we use the non-auth page only
 
 
 ## Article List Generate
-
-__novo_blog_list_title__
-__novo_blog_list_desc__
-__novo_blog_list_keyword__
+- write documentation what is needed!!!!!
+- uri img should be based on document + guidelines cdn + mention mobile version for suggestions
+- date based on last update settigns return in given format
 
 !!!!!!!!!!!! setup article header,keywords,desc,title!!!!!!!!!!!!!!!!!!!!!
 
@@ -119,11 +156,11 @@ Setup reviews article
 
 - **__novo_article_img_width__**
    - the size of the artigle bg width in numeric value
-   - 2483
+   - exampple: 2483
    
 - **__novo_article_img_height__**
    - the size of the artigle bg width in numeric value
-   - 1299
+   - exampple: 1299
 
 - **__novo_article_keywords__**
    - Seo keywords, social sahre metadata
@@ -147,7 +184,7 @@ Setup reviews article
    - it contains h1
    - example code: 
 
-- **__novo_article__date__**
+- **__novo_article_date__**
    - date when the article was created(or updated based on the settings)
    - year month(in words) day (use 0 if the date is for example 01)
    - Examples:
@@ -197,7 +234,8 @@ Setup reviews article
 
 
 ## Article AMP Generate
-to do setup
+- to do setup
+- amp refresh every 2 hours? or make it fresh all of the time
 
 ### Article ANP Replace Tags
 use code from old project
